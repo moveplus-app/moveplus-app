@@ -1,0 +1,28 @@
+# Environment & secrets
+.env
+*.json
+*.plist
+lib/env/*
+lib/config/*
+supabase_keys.dart
+google-services.json
+GoogleService-Info.plist
+
+# Flutter build artifacts
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
+.melos_tooling/
+
+# Android
+android/key.properties
+android/app/google-services.json
+
+# iOS
+ios/Runner/GoogleService-Info.plist
+
+# User-specific files
+.idea/
+.vscode/
