@@ -5,6 +5,9 @@ It rewards users with Energy Points based on movement, challenges, and engagemen
 
 ## Features
 - Walk/Run/Cycling tracking
+- Built in Marketplace
+- Spotify Integration
+- Message System / Group Chat
 - Movement-based challenges
 - Raffle system with Energy entry
 - Subscription system with 7-day trial
