@@ -16,6 +16,7 @@ It rewards users with Energy Points based on movement, challenges, and engagemen
 - Flutter
 - Supabase
 - Google Location & Activity Recognition
+- Mapbox
 - Hive (local storage)
 - Dart
 
