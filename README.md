@@ -18,6 +18,7 @@ It rewards users with Energy Points based on movement, challenges, and engagemen
 ## Tech Stack
 - Flutter
 - Supabase
+- Google Fit
 - Google Location & Activity Recognition
 - Mapbox
 - Hive (local storage)
