@@ -1,0 +1,152 @@
+# Raffle Feature Summary: How Free & Subscription Users Earn Tickets and Energy
+
+## Overview
+The raffle system has two distinct paths: **Free users earn tickets** (with limits), while **Subscription users earn energy** (which they can spend on tickets).
+
+---
+
+## 🆓 FREE USERS: Ticket Earning System
+
+### How Free Users Earn Tickets
+
+#### 1. **Activity-Based Tickets** (Walk/Run Only)
+- **Requirement**: Complete a walk or run activity of **10km or more**
+- **Reward**: **1 ticket** automatically awarded
+- **Limits**:
+  - **Daily**: Maximum **1 ticket per day**
+  - **Weekly**: Maximum **3 tickets per week** (resets every Monday)
+- **Note**: Cycling activities do NOT earn tickets for free users
+
+#### 2. **Challenge-Based Tickets**
+- **Distance Challenge**: Complete challenge → **1 ticket**
+- **Streak Challenge**: Complete challenge → **3 tickets**
+- **Same Limits Apply**: Daily (1/day) and weekly (3/week) limits apply to ALL tickets (activity + challenge combined)
+
+### Free User Ticket Limits Summary
+| Limit Type | Maximum | Reset Period |
+|------------|---------|--------------|
+| Daily | 1 ticket | Resets at midnight |
+| Weekly | 3 tickets | Resets every Monday |
+
+### How Free Users Use Tickets
+- Tickets are **automatically added** to the active raffle when earned (if one exists)
+- **Cost**: 0 energy (free tickets)
+- Free users **cannot** buy additional tickets with energy (they don't earn energy)
+
+---
+
+## 💎 SUBSCRIPTION USERS: Energy Earning System
+
+### How Subscription Users Earn Energy
+
+#### 1. **Activity-Based Energy**
+- **Walk/Run**: **10 Energy per 1 KM**
+- **Cycling**: **7 Energy per 1 KM**
+- **Daily Reset**: 10 PM (22:00)
+
+#### 2. **Progressive Minimum System** (Anti-Farming)
+Energy earning has progressive minimums based on activity count:
+- **First activity** (count=0): 
+  - 200m = 10 Energy
+  - 2km = 20 Energy (total)
+  - Then +10 Energy every 1km after
+- **Second activity** (count=1): 
+  - 1km = 10 Energy
+  - Then +10 Energy every 1km after
+- **Third activity** (count=2): 
+  - 2km = 10 Energy
+  - Then +10 Energy every 1km after
+- **Fourth activity** (count=3): 
+  - 3km = 10 Energy
+  - Then +10 Energy every 1km after
+- And so on...
+
+#### 3. **Daily Distance Caps** (Tier-Based)
+Energy earning is capped by subscription tier:
+
+| Tier | Max Walk/Run per Day | Max Cycling per Day | Monthly Price |
+|------|---------------------|---------------------|---------------|
+| **Free** | 5 km | 10 km | ₱0 |
+| **Starter** | 15 km | 20 km | ₱56 |
+| **Core** | 20 km | 25 km | ₱129 |
+| **Pro** | 25 km | 30 km | ₱250 |
+| **Elite** | 40 km | 45 km | ₱499 |
+
+**Note**: Distance beyond the daily cap does NOT earn energy.
+
+### How Subscription Users Use Energy
+- **Spend energy** to buy raffle tickets
+- **Energy is deducted** when joining a raffle
+- **Can buy multiple tickets** in one transaction
+- Energy balance persists across days (no expiration)
+
+---
+
+## 🎟️ RAFFLE ENTRY MECHANICS
+
+### Free Users
+1. **Earn tickets** by completing 10km+ walk/run activities or challenges
+2. **Tickets automatically added** to active raffle (if one exists)
+3. **No energy cost** (0 energy spent)
+4. **Limited by daily/weekly caps**
+
+### Subscription Users
+1. **Earn energy** by completing activities (walk/run/cycling)
+2. **Spend energy** to buy raffle tickets manually
+3. **Energy deducted** at time of purchase
+4. **No ticket limits** (only limited by energy balance and daily distance caps)
+
+---
+
+## 📊 KEY DIFFERENCES
+
+| Feature | Free Users | Subscription Users |
+|---------|------------|-------------------|
+| **Earn** | Tickets (limited) | Energy (unlimited) |
+| **Activity Types** | Walk/Run only | Walk/Run/Cycling |
+| **Minimum Distance** | 10km for 1 ticket | 200m for 10 energy (first activity) |
+| **Daily Limit** | 1 ticket/day | Based on tier (5-40km) |
+| **Weekly Limit** | 3 tickets/week | None |
+| **Raffle Entry** | Automatic (when earned) | Manual (purchase with energy) |
+| **Energy Cost** | 0 (free) | Varies (spent from balance) |
+
+---
+
+## 🔄 ENERGY CALCULATION EXAMPLES
+
+### Walk/Run (10 Energy per 1km)
+- **First activity**: 200m = 10⚡, 2km = 20⚡, 3km = 30⚡, 4km = 40⚡
+- **Second activity**: 1km = 10⚡, 2km = 20⚡, 3km = 30⚡
+- **Third activity**: 2km = 10⚡, 3km = 20⚡, 4km = 30⚡
+
+### Cycling (7 Energy per 1km)
+- **First activity**: 200m = 7⚡, 2km = 14⚡, 3km = 21⚡, 4km = 28⚡
+- **Second activity**: 1km = 7⚡, 2km = 14⚡, 3km = 21⚡
+- **Third activity**: 2km = 7⚡, 3km = 14⚡, 4km = 21⚡
+
+---
+
+## ⚠️ IMPORTANT NOTES
+
+1. **Free users cannot earn energy** - they only earn tickets
+2. **Subscription users cannot earn tickets** - they only earn energy
+3. **Tickets and energy are separate systems** - no conversion between them
+4. **Daily caps reset at 10 PM** for energy earning
+5. **Weekly ticket limits reset every Monday** for free users
+6. **Energy balance persists** - subscription users can accumulate energy over multiple days
+7. **Free tickets are automatically added** to active raffles (if one exists when ticket is earned)
+8. **Subscription users must manually purchase** tickets using their energy balance
+
+---
+
+## 🎯 SUMMARY
+
+**Free Users Path:**
+```
+Activity (10km+) → Ticket (1/day, 3/week max) → Auto-added to Raffle (0 energy)
+```
+
+**Subscription Users Path:**
+```
+Activity → Energy (tier-based daily cap) → Manual Purchase → Raffle Ticket (energy deducted)
+```
