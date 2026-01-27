@@ -1,0 +1,382 @@
+# MovePlus App - Project Structure
+
+A comprehensive fitness tracking application built with Flutter, featuring GPS tracking, social features, marketplace.
+
+## 📁 Root Directory
+
+```
+moveplusapp/
+├── android/              # Android platform-specific code
+├── ios/                  # iOS platform-specific code
+├── lib/                  # Main Dart source code
+├── assets/              # Static assets (images, icons, animations)
+├── docs/                 # Documentation files
+├── build/                # Build output (generated)
+├── hex_territory/        # Hex territory data files
+├── Icon/                 # App icon assets
+├── linux/                # Linux platform-specific code
+├── macos/                # macOS platform-specific code
+├── pubspec.yaml          # Flutter dependencies and project config
+├── analysis_options.yaml # Dart analyzer configuration
+└── README.md             # Project readme (if exists)
+```
+
+---
+
+## 📱 lib/ - Main Application Code
+
+### Core Files
+```
+lib/
+├── main.dart                    # Application entry point
+├── config/
+│   ├── app_config.dart         # App-wide configuration
+│   └── app_theme.dart          # Theme definitions
+```
+
+### 🎯 Screens (`lib/screens/`)
+All UI screens and user-facing views:
+```
+screens/
+├── auth_screen.dart                    # Authentication flow
+├── signin_screen.dart                  # Sign in screen
+├── signup_screen.dart                  # Sign up screen
+├── get_started_screen.dart             # Onboarding
+├── home_screen.dart                    # Main home screen
+├── run_walk_screen.dart                # Activity tracking (running/walking/cycling)
+├── activity_history_screen.dart        # Activity history list
+├── activity_summary_screen.dart        # Post-activity summary
+├── activity_photo_editor_screen.dart   # Photo editing for activities
+├── daily_activity_detail_screen.dart   # Daily activity details
+├── weekly_summary_screen.dart          # Weekly activity summary
+├── profile_screen.dart                 # User profile
+├── profile_edit_screen.dart            # Edit profile
+├── community_screen.dart               # Community feed
+├── community_post_detail_screen.dart   # Post detail view
+├── post_screen.dart                    # Create/edit post
+├── messages_screen.dart                 # Direct messages
+├── group_chat_screen.dart              # Group chat
+├── group_chat_list_screen.dart         # Group chat list
+├── group_chat_detail_screen.dart       # Group chat detail
+├── notification_screen.dart            # Notifications
+├── marketplace_screen.dart             # Marketplace
+├── marketplace_item_detail_screen.dart  # Item details
+├── marketplace_checkout_screen.dart    # Checkout flow
+├── rewards_raffle_screen.dart          # Rewards raffle
+├── monthly_leaderboard_screen.dart     # Leaderboard
+├── territory_screen.dart                # Territory/hex capture view
+├── offline_maps_screen.dart            # Offline maps management
+├── spotify_screen.dart                 # Spotify integration
+├── soundcloud_screen.dart              # SoundCloud integration
+├── google_fit_connect_screen.dart      # Google Fit connection
+├── google_fit_connected_screen.dart     # Google Fit status
+├── location_picker_screen.dart         # Location selection
+├── convert_token_screen.dart           # Token conversion
+├── version_check_screen.dart           # Version update check
+├── how_it_works_screen.dart            # App tutorial
+├── permission_data_usage_screen.dart   # Permission explanations
+├── privacy_policy_screen.dart          # Privacy policy
+├── terms_and_conditions_screen.dart    # Terms of service
+├── refund_policy_screen.dart          # Refund policy
+├── anti_cheat_policy_screen.dart       # Anti-cheat policy
+└── admin/                              # Admin screens
+    └── [admin-specific screens]
+```
+
+### 🔧 Services (`lib/services/`)
+Business logic and external service integrations:
+```
+services/
+├── supabase_service.dart              # Supabase backend integration
+├── auth_persistence_service.dart      # Authentication persistence
+├── billing_service.dart                # In-app purchases
+├── version_control_service.dart        # App version management
+├── permission_service.dart             # Permission handling
+├── login_rate_limiter_service.dart     # Rate limiting
+├── recaptcha_service.dart              # reCAPTCHA integration
+├── offline_map_service.dart            # Offline map management
+├── android_location_service.dart       # Android location services
+├── foreground_service_manager.dart      # Foreground service management
+├── gps_filter_service.dart             # GPS data filtering
+├── hex_capture_manager.dart            # Hex territory capture
+├── capture_manager.dart                # General capture logic
+├── post_activity_hex_capture.dart      # Post-activity hex capture
+├── challenge_engine.dart               # Challenge system
+├── follower_rewards.dart               # Follower reward system
+├── feature_gate.dart                   # Feature gating logic
+├── music_controller.dart               # Music playback control
+├── global_audio_player.dart            # Global audio player
+├── spotify_service.dart                # Spotify integration
+├── spotify_api_service.dart            # Spotify API calls
+├── spotify_playback_service.dart       # Spotify playback
+├── spotify_service_alternative.dart    # Alternative Spotify implementation
+├── soundcloud_service.dart              # SoundCloud integration
+├── soundcloud_api_service.dart          # SoundCloud API calls
+└── mapbox_match_result.dart            # Mapbox matching results
+```
+
+### 📦 Models (`lib/models/`)
+Data models and entities:
+```
+models/
+├── user_model.dart                     # User data model
+├── activity_session_model.dart          # Activity session model
+├── activity_summary_args.dart           # Activity summary arguments
+├── daily_activity_model.dart            # Daily activity model
+├── challenge_model.dart                 # Challenge model
+├── community_post_model.dart            # Community post model
+├── community_post_data.dart             # Post data structure
+├── post_model.dart                      # Post model
+├── post_comment_model.dart              # Comment model
+├── message_model.dart                   # Message model
+├── channel_model.dart                   # Channel model
+├── notification_model.dart              # Notification model
+├── follow_counts.dart                   # Follower/following counts
+├── user_follow_model.dart               # Follow relationship model
+├── leaderboard_user_model.dart          # Leaderboard user model
+├── marketplace_item_model.dart          # Marketplace item model
+├── transaction_model.dart               # Transaction model
+├── purchase_model.dart                  # Purchase model
+├── raffle_model.dart                    # Raffle model
+├── energy_points_history_model.dart      # Energy points history
+├── hex_territory_model.dart             # Hex territory model
+├── tile_capture_model.dart               # Tile capture model
+├── anti_cheat_violation_model.dart      # Anti-cheat violations
+├── app_config_model.dart                # App configuration model
+├── user_account.dart                    # User account data
+├── spotify_models.dart                   # Spotify data models
+├── soundcloud_models.dart                # SoundCloud data models
+└── [*.freezed.dart, *.g.dart]           # Generated files (Freezed/JSON)
+```
+
+### 🎨 Widgets (`lib/widgets/`)
+Reusable UI components:
+```
+widgets/
+├── activity_summary_card.dart          # Activity summary card
+├── challenge_progress_card.dart         # Challenge progress display
+├── daily_energy_preview.dart            # Daily energy preview
+├── daily_goal_card.dart                 # Daily goal card
+├── overall_status_card.dart             # Overall status card
+├── enhanced_overall_status_card.dart    # Enhanced status card
+├── quick_stat_card.dart                 # Quick statistics card
+├── subscription_entry.dart             # Subscription UI entry
+├── welcome_energy_points_overlay.dart    # Welcome overlay
+├── optional_update_banner.dart          # Update banner
+├── pre_permission_dialog.dart           # Permission dialog
+├── hex_overlay_renderer.dart            # Hex overlay rendering
+├── hex_overlay_renderer_style_layers.dart # Hex style layers
+├── tile_overlay_renderer.dart           # Tile overlay rendering
+├── spotify_audio_player.dart            # Spotify player widget
+├── spotify_full_player_card.dart        # Full Spotify player
+├── spotify_player_overlay.dart          # Spotify overlay
+├── spotify_playback_webview.dart        # Spotify webview
+├── soundcloud_embedded_player.dart      # SoundCloud embedded player
+├── soundcloud_full_player_card.dart     # Full SoundCloud player
+├── home_audio_player_section.dart       # Home audio section
+└── fullscreen_audio_player_overlay.dart # Fullscreen audio overlay
+```
+
+### 🔄 Providers (`lib/providers/`)
+Riverpod state management providers:
+```
+providers/
+├── supabase_init_provider.dart          # Supabase initialization
+├── profile_provider.dart                # User profile state
+├── activity_providers.dart              # Activity-related providers
+├── daily_activity_provider.dart         # Daily activity state
+├── current_track_provider.dart          # Current music track
+├── challenge_progress_provider.dart     # Challenge progress
+├── leaderboard_providers.dart           # Leaderboard data
+├── notification_providers.dart         # Notifications
+├── follow_providers.dart                # Follow relationships
+├── user_suggestions_provider.dart       # User suggestions
+├── community_providers.dart             # Community feed
+├── post_interaction_providers.dart     # Post interactions
+├── marketplace_provider.dart            # Marketplace data
+├── subscription_providers.dart          # Subscription state
+├── conversations_provider.dart          # Conversations
+├── message_providers.dart                # Messages
+├── message_count_provider.dart          # Message counts
+├── channel_providers.dart               # Channels
+├── spotify_providers.dart                # Spotify state
+├── soundcloud_providers.dart            # SoundCloud state
+├── music_controller_provider.dart       # Music controller
+├── player_ui_provider.dart              # Player UI state
+├── weather_provider.dart                # Weather data
+└── welcome_overlay_provider.dart        # Welcome overlay state
+```
+
+### 🛠️ Utils (`lib/utils/`)
+Utility functions and helpers:
+```
+utils/
+├── route_smoother.dart                  # Route smoothing algorithms
+├── mapbox_matcher.dart                  # Mapbox route matching
+├── gps_delta_clamp.dart                 # GPS delta clamping
+├── location_utils.dart                  # Location utilities
+├── hex_math.dart                        # Hex territory calculations
+├── tile_math.dart                       # Tile calculations
+├── energy_calculator.dart                # Energy point calculations
+├── subscription_tiers.dart             # Subscription tier logic
+├── marketplace_categories.dart          # Marketplace categories
+├── weather_icon_mapper.dart             # Weather icon mapping
+├── badge_helper.dart                    # Badge system helper
+├── feed_ranking_service.dart            # Feed ranking algorithm
+├── fit_connection_helper.dart           # Google Fit connection helper
+├── motion_frame.dart                    # Motion frame processing
+├── route_overlay_generator.dart        # Route overlay generation
+├── running_anti_cheat.dart              # Running anti-cheat
+├── walking_anti_cheat.dart             # Walking anti-cheat
+├── cycling_anti_cheat.dart              # Cycling anti-cheat
+├── anomaly_detector.dart                # Anomaly detection
+├── log_sanitizer.dart                  # Log sanitization
+├── shared_preferences_helper.dart       # SharedPreferences wrapper
+└── custom_route_information_provider.dart # Custom routing
+```
+
+### ⚙️ Engines (`lib/engines/`)
+Activity tracking engines:
+```
+engines/
+├── activity_engine.dart                 # Base activity engine interface
+├── engine_factory.dart                  # Engine factory
+├── engine_fit/                          # Google Fit engine
+│   ├── fit_engine.dart                  # Fit engine implementation
+│   ├── fit_normalizer.dart             # Fit data normalization
+│   ├── fit_session_reader.dart         # Fit session reader
+│   └── fit_validator.dart              # Fit data validation
+├── engine_gps_legacy/                   # Legacy GPS engine
+│   └── legacy_gps_engine.dart          # Legacy GPS implementation
+├── models/
+│   ├── activity_session.dart           # Activity session model
+│   └── activity_stats.dart             # Activity statistics model
+├── ENGINE_CONFIG.md                     # Engine configuration docs
+└── INTEGRATION_GUIDE.md                 # Integration guide
+```
+
+---
+
+## 🤖 Android (`android/`)
+
+```
+android/
+├── app/
+│   ├── build.gradle.kts                # App-level Gradle config
+│   ├── proguard-rules.pro              # ProGuard rules
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── AndroidManifest.xml     # Main manifest
+│   │   │   ├── kotlin/                 # Kotlin source files
+│   │   │   │   └── com/moveplus/moveplusapp/
+│   │   │   │       ├── MainActivity.kt
+│   │   │   │       └── [other .kt files]
+│   │   │   ├── java/                   # Java source files (if any)
+│   │   │   └── res/                    # Android resources
+│   │   │       ├── drawable/           # Drawable resources
+│   │   │       ├── layout/              # Layout files
+│   │   │       ├── mipmap-*/           # App icons
+│   │   │       ├── values/             # Values (colors, strings, styles)
+│   │   │       └── xml/                # XML configs
+│   │   ├── debug/                      # Debug-specific files
+│   │   └── profile/                    # Profile build files
+│   └── upload-keystore.jks            # Signing keystore
+├── build.gradle.kts                    # Project-level Gradle config
+├── settings.gradle.kts                 # Gradle settings
+├── gradle.properties                   # Gradle properties
+├── key.properties                      # Keystore properties
+├── key.properties.template            # Keystore template
+├── local.properties                   # Local properties (gitignored)
+└── gradle/                             # Gradle wrapper
+    └── wrapper/
+```
+
+---
+
+## 🍎 iOS (`ios/`)
+
+```
+ios/
+├── Runner/
+│   ├── AppDelegate.swift               # iOS app delegate
+│   ├── Info.plist                      # iOS app configuration
+│   ├── Runner-Bridging-Header.h         # Objective-C bridging header
+│   ├── Assets.xcassets/                # App icons and assets
+│   ├── Base.lproj/                     # Launch screen storyboards
+│   └── GeneratedPluginRegistrant.h/m   # Generated plugin registration
+├── Flutter/                            # Flutter iOS configuration
+│   ├── Debug.xcconfig                  # Debug config
+│   ├── Release.xcconfig                # Release config
+│   └── Generated.xcconfig            # Generated config
+├── Runner.xcodeproj/                   # Xcode project
+└── Runner.xcworkspace/                 # Xcode workspace
+```
+
+---
+
+## 🎨 Assets (`assets/`)
+
+```
+assets/
+├── animation/
+│   └── Confeti.gif                     # Confetti animation
+├── icons/                              # App icons (PNG/SVG)
+│   ├── [39 PNG files]
+│   └── [35 SVG files]
+├── images/                             # Image assets
+│   ├── [marketplace images]
+│   └── [profile/grid images]
+└── nft_shoes/                          # NFT shoe designs
+    └── design_[1-5]/
+        ├── common.png.png
+        ├── uncommon.png.png
+        ├── rare.png.png
+        ├── epic.png.png
+        └── legendary.png.png
+```
+
+---
+
+## 📚 Documentation Files
+
+The root directory contains extensive documentation:
+- Setup guides (`FLUTTER_SETUP_COMPLETE.md`, `ANDROID_STUDIO_SETUP.md`)
+- Feature documentation (`ARCHITECTURE.md`, `ENGINE_ARCHITECTURE.md`)
+- Fix documentation (`FIX_*.md` files)
+- SQL scripts (`*.sql` files for database setup)
+- Build scripts (`BUILD_AAB.ps1`, `build_apk.bat`)
+
+---
+
+## 🔑 Key Configuration Files
+
+- `pubspec.yaml` - Flutter dependencies and project metadata
+- `analysis_options.yaml` - Dart analyzer configuration
+- `android/key.properties` - Android signing configuration (gitignored)
+- `android/local.properties` - Local Android paths (gitignored)
+
+---
+
+## 📝 Notes
+
+- Generated files (`.freezed.dart`, `.g.dart`) are created by code generation tools
+- Build outputs (`build/`) are generated and should be gitignored
+- Platform-specific code is separated into `android/` and `ios/` directories
+- The app uses Riverpod for state management
+- Supabase is used as the backend (BaaS)
+- Mapbox is used for maps and route visualization
+- Google Fit integration for health data
+
+---
+
+## 🚀 Getting Started
+
+1. Install Flutter SDK (3.0.0+)
+2. Run `flutter pub get` to install dependencies
+3. Configure `android/key.properties` for Android builds
+4. Set up Supabase credentials in `lib/config/app_config.dart`
+5. Run `flutter run` to start the app
+
+---
+
+**Last Updated:** Version 1.0.1+64
